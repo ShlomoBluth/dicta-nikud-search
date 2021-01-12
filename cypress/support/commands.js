@@ -11,7 +11,7 @@ Cypress.Commands.add('nikudSearchRequest',({status=200,message='',delaySeconds=0
   cy.get('i[class="fas fa-search"]').click({force: true})
   
   if(message.length>0){
-    cy.contains(message,{timeout:1000*delaySeconds}).should('exist')
+    cy.contains(message,{timeout:1000*delaySeconds+30000}).should('exist')
   }
       
 })  
