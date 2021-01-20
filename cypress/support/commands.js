@@ -4,9 +4,14 @@ Cypress.Commands.add('nikudSearchRequest',({url,status=200,message='',delaySecon
     statusCode: status
   },)
   cy.get('input[id="search-input-dd"]').type('אשה')
-  if(url=='typeaheadapi'){
+  if(url=='/typeaheadapi'){
+    if(delaySeconds>0){
+      cy.get('[class*="spinner"]',{timeout:1000*delaySeconds}).should('not.exist')
+    }else{
+      cy.get('[class*="spinner"]').should('not.exist')
+    }
     if(message.length>0){
-      cy.contains(massage).should('exist')
+      cy.contains(message).should('exist')
     }
   }else{
     cy.get('ul[id=search-typeaheads').children('li').first().click()
