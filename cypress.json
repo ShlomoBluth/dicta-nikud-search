@@ -1,5 +1,5 @@
 {
     "projectId": "1ukkms",
     "screenshotOnRunFailure": false,
-    "defaultCommandTimeout": 30000
+    "defaultCommandTimeout": 10000
 }

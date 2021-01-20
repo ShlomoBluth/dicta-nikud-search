@@ -9,20 +9,41 @@ describe('RequestsTests',()=>{
     cy.visit('https://nikudsearch.dicta.org.il/')
   })
 
-  it('Error message for response with a delay of 2 minutes when clicking the run butten'+
+  it('Error message for api response with a delay of 2 minutes when clicking the run butten'+
   ' of nikudsearch page',()=>{
     cy.nikudSearchRequest({
-      message:'הופס יש לנו בעיה נסו שנית, או בקרו באתר מאוחר יותר',
+      url:'/api',
+      message:'אופס יש לנו בעיה נסו שנית, או בקרו באתר מאוחר יותר',
       delaySeconds:60*2
     })
   })
 
   
-  it('Error message for response with status code 500 when clicking the run butten of nikudsearch page',
+  it('Error message for api response with status code 500 when clicking the run butten of nikudsearch page',
   ()=>{
     cy.nikudSearchRequest({
+      url:'/api',
       status:500,
-      message:'הופס יש לנו בעיה נסו שנית, או בקרו באתר מאוחר יותר'
+      message:'אופס יש לנו בעיה נסו שנית, או בקרו באתר מאוחר יותר'
+    })
+  })
+
+  it('Error message for typeaheadapi response with a delay of 2 minutes when clicking the run butten'+
+  ' of nikudsearch page',()=>{
+    cy.nikudSearchRequest({
+      url:'/typeaheadapi',
+      message:'אופס יש לנו בעיה נסו שנית, או בקרו באתר מאוחר יותר',
+      delaySeconds:60*2
+    })
+  })
+
+  
+  it('Error message for typeaheadapi response with status code 500 when clicking the run butten of nikudsearch page',
+  ()=>{
+    cy.nikudSearchRequest({
+      url:'/typeaheadapi',
+      status:500,
+      message:'אופס יש לנו בעיה נסו שנית, או בקרו באתר מאוחר יותר'
     })
   })
   
