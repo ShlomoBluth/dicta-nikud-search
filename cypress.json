@@ -1,5 +1,10 @@
 {
     "projectId": "1ukkms",
     "screenshotOnRunFailure": false,
-    "defaultCommandTimeout": 10000
+    "defaultCommandTimeout": 10000,
+    "baseUrl":"https://search-tanach-for-nikud-front-end.netlify.app/",
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "configFile": "reporter-config.json"
+    }
 }
