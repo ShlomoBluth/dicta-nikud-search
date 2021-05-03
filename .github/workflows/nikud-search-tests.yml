@@ -35,13 +35,13 @@ jobs:
       run: xvfb-run npx cypress run --browser firefox --spec ./cypress/integration/basicTests.js
       if: ${{ always() }}
 
-    #- name: Run chrome requests tests
-      #run: npx cypress run --browser chrome --spec ./cypress/integration/requestsTests.js
-      #if: ${{ always() }}
+    - name: Run chrome requests tests
+      run: npx cypress run --browser chrome --spec ./cypress/integration/requestsTests.js
+      if: ${{ always() }}
 
-    #- name: Run firefox requests tests
-      #run: npx cypress run --browser firefox --spec ./cypress/integration/requestsTests.js
-      #if: ${{ always() }}
+    - name: Run firefox requests tests
+      run: npx cypress run --browser firefox --spec ./cypress/integration/requestsTests.js
+      if: ${{ always() }}
 
 
     - name: Copy test execution videos
