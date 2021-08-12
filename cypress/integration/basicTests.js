@@ -28,7 +28,7 @@ sizes.forEach((size) => {
         
         it('Nikud search run',()=>{
             cy.nikudSearchRun()
-            cy.get('.frame-area').should('contain','אִמָּם')
+            cy.get('.frame-area').should('contain','אִיש')
         })
     
     })

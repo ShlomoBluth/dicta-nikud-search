@@ -10,8 +10,10 @@ Cypress.Commands.add('testMessage',({message='',delaySeconds=0})=>{
 })
 
 Cypress.Commands.add('nikudSearchRun',()=>{
-  cy.get('input[id="search-input-dd"]').type('אשה')
-  cy.get('ul[id=search-typeaheads').children('li').first().click()
+  cy.get('input[class*="d-inline"]').type('שיר',{force:true}).then(()=>{
+    cy.get('[class*="spinner"]').should('not.exist')
+    cy.get('ul[id=search-typeaheads').children('li').first().click()
+  })
   cy.get('i[class="fas fa-search"]').click({force: true})
 })
 
