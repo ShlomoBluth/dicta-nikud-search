@@ -1,12 +1,15 @@
 Cypress.Commands.add('testMessage',({message='',delaySeconds=0})=>{
-  if(delaySeconds>0){
-    cy.get('[class*="spinner"]',{timeout:1000*delaySeconds}).should('not.exist')
-  }else{
-    cy.get('[class*="spinner"]').should('not.exist')
-  }
-  if(message.length>0){
-    cy.contains(message).should('exist')
-  }
+  cy.then(()=>{
+    if(delaySeconds>0){
+      cy.get('[class*="spinner"]',{timeout:1000*delaySeconds}).should('not.exist')
+    }else{
+      cy.get('[class*="spinner"]').should('not.exist')
+    }
+  }).then(()=>{
+    if(message.length>0){
+      cy.contains(message).should('exist')
+    }
+  })
 })
 
 Cypress.Commands.add('nikudSearchRun',()=>{
