@@ -5,6 +5,11 @@
     "baseUrl":"https://search-tanach-for-nikud-front-end.netlify.app/",
     "reporter": "cypress-multi-reporters",
     "reporterOptions": {
-        "configFile": "reporter-config.json"
+        "configFile": "dicta-shared/reporter-config.json"
+    },
+    "env":{
+        "TOOL_TESTS":false,
+        "REQUESTS_TESTS":true,
+        "RECORD_KEY":"77c01fe1-affc-4b8f-8033-2791d3c80670"
     }
 }
