@@ -4,7 +4,6 @@
     "defaultCommandTimeout": 10000,
     "baseUrl":"https://search-tanach-for-nikud-front-end.netlify.app/",
     "reporter": "cypress-multi-reporters",
-    "failOnStatusCode": false,
     "reporterOptions": {
         "configFile": "dicta-shared/reporter-config.json"
     },
