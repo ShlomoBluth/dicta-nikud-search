@@ -13,7 +13,11 @@ Cypress.Commands.add('testMessage',({message='',delaySeconds=0})=>{
 })
 
 Cypress.Commands.add('nikudSearchRun',()=>{
-  cy.get('input[class*="d-inline"]').type('שיר',{force:true}).then(()=>{
+  cy.get('input[class*="d-inline"]').type('ש',{force:true})
+  cy.wait(1000)
+  cy.get('input[class*="d-inline"]').type('י',{force:true})
+  cy.wait(1000)
+  cy.get('input[class*="d-inline"]').type('ר',{force:true}).then(()=>{
     cy.get('[class*="spinner"]').should('not.exist')
     cy.get('ul[id=search-typeaheads').children('li').first().click()
   })

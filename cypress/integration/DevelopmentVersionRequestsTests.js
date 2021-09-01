@@ -13,20 +13,8 @@ sizes.forEach((size) => {
 
     
     beforeEach(() => {
-      if (Cypress._.isArray(size)) {
-        Cypress.config({
-          viewportWidth: size[0],
-          viewportHeight: size[1]
-        })
-        cy.viewport(size[0], size[1])
-      } else {
-        Cypress.config({
-          viewportWidth: 375,
-          viewportHeight: 812
-        })
-      cy.viewport(size)
-      }
-      cy.visit('/')
+      cy.screenSize({size:size})
+      cy.visitpage({url:'/'})
     })
   
     it('Error message for api response with a delay of 2 minutes when clicking the run butten'+
