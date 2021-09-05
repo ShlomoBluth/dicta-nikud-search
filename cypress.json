@@ -8,6 +8,8 @@
         "configFile": "dicta-shared/reporter-config.json"
     },
     "env":{
+        "DEV_URL":"https://search-tanach-for-nikud-front-end.netlify.app/",
+        "LIVE_URL":"https://nikudsearch.dicta.org.il/",
         "TOOL_TESTS":true,
         "REQUESTS_TESTS":true,
         "RECORD_KEY":"77c01fe1-affc-4b8f-8033-2791d3c80670"
