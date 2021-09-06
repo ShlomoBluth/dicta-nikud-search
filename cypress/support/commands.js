@@ -1,6 +1,7 @@
 Cypress.Commands.add('testMessage',({message='',delaySeconds=0})=>{
   cy.then(()=>{
     if(delaySeconds>0){
+      cy.get('[class*="spinner"]').should('exist')
       cy.get('[class*="spinner"]',{timeout:1000*delaySeconds}).should('not.exist')
     }else{
       cy.get('[class*="spinner"]').should('not.exist')
