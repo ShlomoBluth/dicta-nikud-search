@@ -15,7 +15,7 @@ Cypress.Commands.add('testMessage',({message='',delaySeconds=0})=>{
 
 Cypress.Commands.add('nikudSearchRun',()=>{
   cy.get('input[class*="d-inline"]').type('שִיר',{force:true})
-  cy.get('[class*="spinner"]').should('not.exist')
+  cy.get('[class*="spinner"]',{timeout:60000}).should('not.exist')
   cy.get('i[class="fas fa-search"]').click({force: true})
 })
 
