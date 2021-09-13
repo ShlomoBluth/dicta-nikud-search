@@ -17,7 +17,6 @@ Cypress.Commands.add('nikudSearchRun',()=>{
   cy.get('input[class*="d-inline"]').type('שִיר',{force:true})
   cy.get('[class*="spinner"]',{timeout:60000}).should('not.exist')
   cy.get('i[class="fas fa-search"]').click({force: true})
-  cy.get('[class*="spinner"]',{timeout:60000}).should('not.exist')
 })
 
 Cypress.Commands.add('typeaheadapiTest',({message='',delaySeconds=0})=>{
