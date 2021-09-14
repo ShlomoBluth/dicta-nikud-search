@@ -26,7 +26,7 @@ urls.forEach((urlValue,urlKey)=>{
             it('Nikud search run',()=>{
                 cy.nikudSearchRun()
                 cy.get('[class*="spinner"]',{timeout:60000}).should('not.exist')
-                cy.get('.frame-area').should('contain','אִיש')
+                cy.get('.frame-area',{timeout:60000}).should('contain','אִיש')
             })
         
         
