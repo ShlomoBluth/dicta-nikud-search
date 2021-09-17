@@ -14,10 +14,10 @@ Cypress.Commands.add('testMessage',({message='',delaySeconds=0})=>{
 })
 
 Cypress.Commands.add('nikudSearchRun',()=>{
-  cy.get('input[class*="d-inline"]').type('שִיר',{force:true})
+  cy.get('input[class*="d-inline"]',{timeout:30000}).type('שִיר',{force:true})
   cy.get('[class*="spinner"]',{timeout:60000}).should('not.exist')
   cy.get('[id="search-typeaheads"]',{timeout:60000}).should('exist')
-  cy.get('i[class="fas fa-search"]').click({force: true})
+  cy.get('button[class*="text-left btn-link"]').click({force: true})
 })
 
 Cypress.Commands.add('typeaheadapiTest',({message='',delaySeconds=0})=>{
