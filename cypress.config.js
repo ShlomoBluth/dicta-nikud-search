@@ -11,14 +11,12 @@ module.exports = defineConfig({
   env: {
     DEV_URL: 'https://search-tanach-for-nikud-front-end.netlify.app/',
     LIVE_URL: 'https://nikudsearch.dicta.org.il/',
-    TOOL_TESTS: true,
-    REQUESTS_TESTS: true,
-    RECORD_KEY: '77c01fe1-affc-4b8f-8033-2791d3c80670',
   },
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {
+      require('./dicta-shared/videoCleanup')(on)
       return require('./cypress/plugins/index.js')(on, config)
     },
     baseUrl: 'https://search-tanach-for-nikud-front-end.netlify.app/',
