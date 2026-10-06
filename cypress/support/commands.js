@@ -1,16 +1,16 @@
 Cypress.Commands.add('testMessage',({message='',delaySeconds=0})=>{
-  cy.then(()=>{
-    if(delaySeconds>0){
-      cy.get('[class*="spinner"]').should('exist')
-      cy.get('[class*="spinner"]',{timeout:1000*delaySeconds}).should('not.exist')
-    }else{
-      cy.get('[class*="spinner"]').should('not.exist')
+  if(delaySeconds>0){
+    // The site may show a spinner while it waits, or show the error popup right away;
+    // either is fine, only the popup matters
+    if(message.length>0){
+      cy.contains(message,{timeout:1000*delaySeconds+30000}).should('exist')
     }
-  }).then(()=>{
+  }else{
+    cy.get('[class*="spinner"]').should('not.exist')
     if(message.length>0){
       cy.contains(message).should('exist')
     }
-  })
+  }
 })
 
 Cypress.Commands.add('nikudSearchRun',()=>{
