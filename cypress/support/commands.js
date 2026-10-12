@@ -31,7 +31,7 @@ Cypress.Commands.add('typeaheadapiTest',({message='',delaySeconds=0})=>{
 
 Cypress.Commands.add('nikudSearchRequest',({url,status=200,message='',delaySeconds=0})=>{
   cy.intercept('GET', url+'/**', {
-    delayMs:1000*delaySeconds,
+    delay:1000*delaySeconds,
     statusCode: status
   },)
   if(url=='/typeaheadapi'){
